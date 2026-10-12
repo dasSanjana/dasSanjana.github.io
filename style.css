@@ -1,0 +1,632 @@
+:root {
+    --cream: #fbf0c4;
+  --maroon: #a32e2e;
+  --ink: #3e1414;
+  --dark-cream:#f7e7a8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html { 
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'EB Garamond', serif; /* Applies the new classic font */
+    font-size: 1.15rem; /* Makes it slightly larger and easier to read */
+    line-height: 1.8; /* Gives the text that airy, spaced-out look */
+}
+
+
+nav {
+    position: sticky;
+    top: 0;
+    background-color: var(--maroon);
+    z-index: 10;
+    display: flex;
+    justify-content: space-between; /* This pushes the two div groups to opposite sides */
+    align-items: center;
+    padding: 18px 5%; 
+    box-shadow: 0 4px 16px rgba(62, 20, 20, 0.3);
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: var(--cream);
+    text-decoration: none;
+}
+.nav-links a.active {
+    text-decoration: underline;
+    text-underline-offset: 6px; /* Pushes the underline down slightly so it looks premium */
+    text-decoration-thickness: 2px;
+    color:var(--dark-cream); /* Brightens the active link slightly */
+}
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* This controls the icon group */
+.social-links {
+    display: flex;
+    gap: 24px; /* This creates the decent amount of space between your icons */
+    align-items: center;
+}
+
+.social-links a {
+    color: var(--cream);
+    font-size: 1.4rem; /* Makes the icons a good size */
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #fff;
+    transform: translateY(-2px); /* Slight bounce effect on hover */
+}
+section {
+  /* Increase the top padding (110px) to give your titles plenty of breathing room below the nav */
+  padding: 110px 8% 80px 8%; 
+  
+  /* CRITICAL: Set this to match your nav bar's exact height so it doesn't expose the previous section */
+  scroll-margin-top: 74px; 
+}
+
+#hey {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 16px; /* This dictates the exact, even space between every element */
+}
+
+#hey h1{
+    color: var(--maroon);
+    font-size: clamp(3rem, 10vw, 7rem);
+
+}
+
+#hey p, 
+#hey h1 {
+    margin: 0;
+}
+
+.button{
+    padding: 12px 22px;
+    color: var(--cream);
+    background : var(--maroon);
+    border-radius: 80px;
+    text-decoration: none;
+}
+
+.button:hover {
+  background: var(--maroon-dark, #800000); 
+  cursor: pointer;
+}
+
+.intro-text{
+    color: var(--maroon)
+}
+
+.body-text{
+    color: var(--ink);
+}
+
+#experience,
+#projects {
+  min-height: calc(100vh - 54px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap : 24px;
+    margin-top: 28px;
+}
+
+
+.project-card{
+    min-height: 300px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color : var(--cream);
+    background: var(--maroon);
+    border-radius: 18px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(62, 20, 20, 0.2);
+}
+
+.project-kind {
+  font-size: 0.9rem;
+}
+
+.project-card--flip {
+  min-height: 320px;
+  padding: 0;
+  display: block;
+  background: transparent;
+  perspective: 1000px;
+}
+
+.project-card--flip .project-inner {
+  position: relative;
+  height: 320px;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+}
+
+.project-card--flip .project-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px;
+  border-radius: 18px;
+  backface-visibility: hidden;
+}
+
+.project-card--flip .project-front {
+  color: var(--cream);
+  background: var(--maroon);
+}
+
+.project-card--flip .project-back {
+  color: var(--ink);
+  background: #fcf5d6;
+  transform: rotateY(180deg);
+}
+
+.project-card--flip.is-flipped .project-inner {
+  transform: rotateY(180deg);
+}
+
+#experience{
+  color: var(--cream);
+  background-color: var(--maroon);
+  min-height: 300px;
+  padding: 80px 8%;
+
+}
+
+#experience .exp{
+  padding: 28px 0;
+  margin: 32px auto 0;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 24px;
+  border-top: 1px solid rgba(251, 240, 196, 0.4);
+  border-bottom: 1px solid rgba(251, 240, 196, 0.4);
+}
+
+#experience .exp-num{
+  margin: 0;
+  color: rgba(251, 240, 196, 0.45);
+  font-size: 4rem;
+}
+
+#experience .exp-part h3{
+   margin: 0 0 8px;
+}
+
+#experience .exp-list {
+  padding-left: 20px;
+  line-height: 1.6;
+}
+@media (max-width: 600px) {
+#experience .exp{
+     grid-template-columns: 1fr;
+    gap: 8px;
+}
+}
+
+#experience .experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.company-meta {
+    display: flex;
+    gap: 12px;
+}
+
+#education {
+  background-color : var(--dark-cream);
+}
+
+#experience .experience-header h1 {
+  font-family: 'Playfair Display', serif; /* Matches the "About Me" font style */
+  font-size: 3.5rem; /* Matches the size of your "About Me" heading */
+  margin: 0;
+  line-height: 1;
+}
+#education .college {
+  padding: 28px;
+  display: flex;
+  min-height: 200px;
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+#education {
+  background-color: #f8eab6;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2.3vw, 32px);
+}
+
+.education-card {
+  /* REDUCED: Removed the huge 248px minimum height. 
+     A smaller minimum keeps them looking like cards without being unnecessarily giant. */
+  min-height: 160px; 
+  
+  /* REDUCED: Tighter padding so the content doesn't look lost inside a huge box */
+  padding: 24px 28px; 
+  
+  background: var(--cream);
+  border: 1px solid rgba(122, 31, 31, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 18px 40px rgba(74, 20, 20, 0.12);
+  
+  /* NEW: Pushes the text closer together inside the card */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.education-year {
+  display: block;
+  margin-bottom: 8px; /* REDUCED from 24px to tighten up the spacing */
+  color: var(--maroon);
+  font-weight: bold;
+}
+
+.education-card h3,
+.education-extra h3 {
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+
+#projects h1,
+#education h1,
+#education h2 {
+  font-family: 'Playfair Display', serif; 
+  font-size: 3.5rem; 
+  margin: 0 0 40px 0; /* Gives a nice breathing room before the cards start */
+  line-height: 1;
+}
+.education-extras {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 56px;
+}
+
+.education-extra {
+  padding-left: 20px;
+  border-left: 3px solid var(--maroon);
+  
+  /* NEW: Turns the block into a vertical stack and controls the exact spacing */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Stops the text from stretching vertically */
+  gap: 8px; /* Tightly packs the eyebrow, title, and description together */
+}
+
+.education-extra p, 
+.education-extra h3 {
+  margin: 0 !important; 
+  line-height: 1.4; /* Makes the individual lines slightly tighter than the global body text */
+}
+
+.education-extra .eyebrow {
+  color: var(--maroon);
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  /* Uses the premium smooth curve from your hero section */
+  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: var(--delay, 0ms);
+}
+
+/* The ending state (visible and in place) */
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .education-extras {
+    grid-template-columns: 1fr;
+  }
+}
+
+#about {
+  padding: 110px 8% 140px 8%;
+  display: block;
+  min-height: calc(100vh - 74px); 
+}
+
+#about .about-layout {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(240px, 0.8fr);
+  align-items: start; /* CRITICAL FIX: Aligns the text to the top instead of pushing it down */
+  gap: clamp(32px, 6vw, 80px);
+}
+
+#about .my-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 700px;
+}
+
+
+#about .my-info h1 {
+  color: var(--maroon);
+  font-family: 'Playfair Display', serif;
+  margin: 0 0 20px 0;
+  font-size: 3.5rem; /* Increases the heading size */
+  line-height: 1; /* Keeps the spacing tight */
+}
+
+#about .my-info p {
+  margin: 0;
+  line-height: 1.7;
+}
+#about .about-photo {
+  position: relative;
+  justify-self: center;
+  align-self: center; /* Keeps the photo vertically centered even though the text moved up */
+  width: min(100%, 340px);
+  aspect-ratio: 1;
+}
+
+#about .about-photo::before {
+  content: "";
+  position: absolute;
+  inset: -34px;
+  border: 1.5px dashed rgba(163, 46, 46, 0.45);
+  border-radius: 50%;
+  animation: orbit-spin 30s linear infinite;
+  pointer-events: none;
+}
+
+#about .about-photo::after {
+  content: "";
+  position: absolute;
+  inset: -34px;
+  background:
+    radial-gradient(circle, var(--maroon) 0 3px, transparent 3.5px)
+      50% 0 / 8px 8px no-repeat,
+    radial-gradient(circle, var(--maroon) 0 4px, transparent 4.5px)
+      18% 82% / 10px 10px no-repeat;
+  animation: orbit-spin 18s linear infinite;
+  pointer-events: none;
+}
+
+#about .about-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px var(--cream);
+  animation: photo-float 5s ease-in-out infinite;
+}
+.stars {
+  color: var(--maroon);
+  font-size: 2.2rem;
+  display: inline-block;
+  position: relative;
+  font-weight: normal; /* Prevents the star from looking too bold/distorted */
+  transform: translateY(-8px); /* Lifts the stars slightly above the text */
+}
+
+/* Styles the secondary, smaller star */
+.small-star {
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: -4px; /* Pushes the small star down */
+  right: -20px; /* Pushes the small star to the right */
+}
+
+@keyframes orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 700px) {
+  #about .about-photo {
+    width: min(70vw, 280px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #about .about-photo::before,
+  #about .about-photo::after {
+    animation: none;
+  }
+}
+
+@keyframes photo-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Keep the fade up for the other elements */
+@keyframes fadeSlideUp {
+  0% { opacity: 0; transform: translateY(25px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+#hey .intro-text {
+  font-size: 1.5rem; /* Increased font size */
+  font-style: italic; /* Matches the reference design */
+  margin: 0; /* Removes the default spacing */
+  color: var(--maroon);
+  
+  /* Keep your existing animation properties here */
+  opacity: 0;
+  animation: fadeSlideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+#hey .body-text {
+  font-size: 1.4rem; /* Increased font size */
+  margin: 15px 0 35px 0; /* 15px gap above, 35px gap below before the button */
+  color: var(--ink);
+  opacity: 0;
+  animation: fadeSlideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: 0.8s;
+}/* Waits until the bounce is almost done */
+
+
+#hey .button {
+  opacity: 0;
+  animation: fadeSlideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: 1s;
+}
+
+/* --- NEW: The Canva-Style Bounce for the Name --- */
+.bounce-name {
+    font-family: 'Playfair Display', serif; 
+    text-transform: uppercase; 
+    color: var(--maroon);
+    font-size: clamp(3rem, 10vw, 7rem);
+    font-weight: 700; 
+    line-height: 1; /* FIX: This stops the global 1.8 line-height from creating massive gaps */
+}
+
+.bounce-name span:not(.name-spacer) {
+  display: inline-block; 
+  opacity: 0; 
+  animation: letterBounce 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: calc(var(--i) * 0.08s + 0.15s);
+}
+/* The actual bounce keyframes */
+@keyframes letterBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-20px); /* Bounces up */
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(5px);  /* Dips slightly down */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);    /* Rests at baseline */
+  }
+}
+
+.name-spacer {
+  display: inline-block;
+  width: 0.35em; /* Adjust this value up or down (e.g., 0.2em or 0.5em) to get the perfect gap */
+}
+
+/* --- FOOTER STYLES --- */
+#thank-you {
+    background-color: var(--maroon);
+    color: var(--cream);
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 5%;
+    border-top: 1px solid rgba(251, 240, 196, 0.2); /* Soft separator line */
+}
+
+#thank-you h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem; /* Big and elegant */
+    letter-spacing: 2px;
+    margin: 0 0 40px 0;
+    line-height: 1;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-socials a {
+    color: var(--cream);
+    font-size: 3.5rem; /* Larger than the nav bar icons */
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: #fff;
+    transform: translateY(-6px) scale(1.05); /* Premium float-up effect */
+}
+
+.footer-credit p {
+    margin: 5px 0;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+/* --- NAV BAR TRANSITION --- */
+/* Add this specific class to smoothly hide the nav bar */
+nav.nav-hidden {
+    transform: translateY(-100%);
+}
+
+.dm-message {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.6rem;
+    font-style: italic;
+    color: var(--dark-cream); /* Uses your darker cream for a premium look */
+    margin: -25px 0 35px 0; /* Pulls it up closer to the heading, pushes icons down */
+}
