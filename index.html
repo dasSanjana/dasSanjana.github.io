@@ -399,7 +399,7 @@ Framework
   resetAutoplay();
 
 
-  //  MOBILE MENU TOGGLE 
+  // --- MOBILE MENU TOGGLE ---
   const menuBtn = document.querySelector('.menu-btn');
   const navLinksContainer = document.querySelector('.nav-links');
   const mobileLinks = document.querySelectorAll('.nav-links a');
@@ -409,7 +409,7 @@ Framework
       navLinksContainer.classList.toggle('menu-open');
   });
 
-  // to automatically close the menu when you click any link
+  // Automatically close the menu when you click any link
   mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
           navLinksContainer.classList.remove('menu-open');
