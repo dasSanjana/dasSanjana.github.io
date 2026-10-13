@@ -17,9 +17,9 @@ body {
     margin: 0;
     background: var(--cream);
     color: var(--ink);
-    font-family: 'EB Garamond', serif; /* Applies the new classic font */
-    font-size: 1.15rem; /* Makes it slightly larger and easier to read */
-    line-height: 1.8; /* Gives the text that airy, spaced-out look */
+    font-family: 'EB Garamond', serif; 
+    font-size: 1.15rem; 
+    line-height: 1.8; 
 }
 
 
@@ -29,7 +29,7 @@ nav {
     background-color: var(--maroon);
     z-index: 10;
     display: flex;
-    justify-content: space-between; /* This pushes the two div groups to opposite sides */
+    justify-content: space-between; 
     align-items: center;
     padding: 18px 5%; 
     box-shadow: 0 4px 16px rgba(62, 20, 20, 0.3);
@@ -46,36 +46,33 @@ nav {
 }
 .nav-links a.active {
     text-decoration: underline;
-    text-underline-offset: 6px; /* Pushes the underline down slightly so it looks premium */
+    text-underline-offset: 6px; 
     text-decoration-thickness: 2px;
-    color:var(--dark-cream); /* Brightens the active link slightly */
-}
+    color:var(--dark-cream);
+    
 .nav-links a:hover {
     text-decoration: underline;
 }
 
-/* This controls the icon group */
+
 .social-links {
     display: flex;
-    gap: 24px; /* This creates the decent amount of space between your icons */
+    gap: 24px; 
     align-items: center;
 }
 
 .social-links a {
     color: var(--cream);
-    font-size: 1.4rem; /* Makes the icons a good size */
+    font-size: 1.4rem; 
     text-decoration: none;
 }
 
 .social-links a:hover {
     color: #fff;
-    transform: translateY(-2px); /* Slight bounce effect on hover */
+    transform: translateY(-2px); 
 }
 section {
-  /* Increase the top padding (110px) to give your titles plenty of breathing room below the nav */
   padding: 110px 8% 80px 8%; 
-  
-  /* CRITICAL: Set this to match your nav bar's exact height so it doesn't expose the previous section */
   scroll-margin-top: 74px; 
 }
 
@@ -86,7 +83,7 @@ section {
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 16px; /* This dictates the exact, even space between every element */
+    gap: 16px; 
 }
 
 #hey h1{
@@ -149,10 +146,6 @@ section {
 
 }
 
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 30px rgba(62, 20, 20, 0.2);
-}
 
 .project-kind {
   font-size: 0.9rem;
@@ -178,7 +171,7 @@ section {
   inset: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start; 
   padding: 28px;
   border-radius: 18px;
   backface-visibility: hidden;
@@ -197,6 +190,79 @@ section {
 
 .project-card--flip.is-flipped .project-inner {
   transform: rotateY(180deg);
+}
+
+/* --- PROJECT CARDS: SCROLLING & SPACING --- */
+.project-front,
+.project-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    gap: 16px; 
+    
+    overflow-y: auto; 
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+}
+
+
+.project-front::-webkit-scrollbar,
+.project-back::-webkit-scrollbar {
+    display: none; 
+}
+
+/* --- INLINE LINK STYLING --- */
+
+.project-front a,
+.project-back a {
+    color: var(--dark-cream); 
+    text-decoration: underline;
+    text-underline-offset: 4px; 
+    font-weight: normal;
+    transition: opacity 0.3s ease;
+}
+
+.project-front a:hover,
+.project-back a:hover {
+    opacity: 0.7;
+}
+
+
+.project-back ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.project-back li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+
+.project-card--flip .project-face,
+.project-front,
+.project-back {
+    justify-content: flex-start !important;
+}
+
+
+.project-front > :last-child,
+.project-back > :last-child,
+.project-back ul {
+    margin-top: 0 !important; 
+}
+
+.project-front h3,
+.project-front p,
+.project-back h3,
+.project-back p {
+    margin: 0;
+}
+
+
+.project-front h3,
+.project-back h3 {
+    line-height: 1.3; 
 }
 
 #experience{
@@ -240,23 +306,23 @@ section {
 }
 
 #experience .experience-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    flex-direction: column; 
+    align-items: flex-start;
+    gap: 12px; 
+  }
 
 .company-meta {
-    display: flex;
-    gap: 12px;
-}
+    flex-direction: column;
+    gap: 6px;
+  }
 
 #education {
   background-color : var(--dark-cream);
 }
 
 #experience .experience-header h1 {
-  font-family: 'Playfair Display', serif; /* Matches the "About Me" font style */
-  font-size: 3.5rem; /* Matches the size of your "About Me" heading */
+  font-family: 'Playfair Display', serif; 
+  font-size: 3.5rem; 
   margin: 0;
   line-height: 1;
 }
@@ -281,19 +347,12 @@ section {
 }
 
 .education-card {
-  /* REDUCED: Removed the huge 248px minimum height. 
-     A smaller minimum keeps them looking like cards without being unnecessarily giant. */
   min-height: 160px; 
-  
-  /* REDUCED: Tighter padding so the content doesn't look lost inside a huge box */
   padding: 24px 28px; 
-  
   background: var(--cream);
   border: 1px solid rgba(122, 31, 31, 0.2);
   border-radius: 20px;
   box-shadow: 0 18px 40px rgba(74, 20, 20, 0.12);
-  
-  /* NEW: Pushes the text closer together inside the card */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -302,7 +361,7 @@ section {
 
 .education-year {
   display: block;
-  margin-bottom: 8px; /* REDUCED from 24px to tighten up the spacing */
+  margin-bottom: 8px; 
   color: var(--maroon);
   font-weight: bold;
 }
@@ -318,7 +377,7 @@ section {
 #education h2 {
   font-family: 'Playfair Display', serif; 
   font-size: 3.5rem; 
-  margin: 0 0 40px 0; /* Gives a nice breathing room before the cards start */
+  margin: 0 0 40px 0; 
   line-height: 1;
 }
 .education-extras {
@@ -331,18 +390,16 @@ section {
 .education-extra {
   padding-left: 20px;
   border-left: 3px solid var(--maroon);
-  
-  /* NEW: Turns the block into a vertical stack and controls the exact spacing */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Stops the text from stretching vertically */
-  gap: 8px; /* Tightly packs the eyebrow, title, and description together */
+  justify-content: flex-start; 
+  gap: 8px; 
 }
 
 .education-extra p, 
 .education-extra h3 {
   margin: 0 !important; 
-  line-height: 1.4; /* Makes the individual lines slightly tighter than the global body text */
+  line-height: 1.4; 
 }
 
 .education-extra .eyebrow {
@@ -356,12 +413,11 @@ section {
 .reveal {
   opacity: 0;
   transform: translateY(40px);
-  /* Uses the premium smooth curve from your hero section */
   transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   transition-delay: var(--delay, 0ms);
 }
 
-/* The ending state (visible and in place) */
+
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
@@ -389,7 +445,7 @@ section {
   width: 100%;
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(240px, 0.8fr);
-  align-items: start; /* CRITICAL FIX: Aligns the text to the top instead of pushing it down */
+  align-items: start; 
   gap: clamp(32px, 6vw, 80px);
 }
 
@@ -459,8 +515,8 @@ section {
   font-size: 2.2rem;
   display: inline-block;
   position: relative;
-  font-weight: normal; /* Prevents the star from looking too bold/distorted */
-  transform: translateY(-8px); /* Lifts the stars slightly above the text */
+  font-weight: normal; 
+  transform: translateY(-8px); 
 }
 
 /* Styles the secondary, smaller star */
@@ -476,11 +532,7 @@ section {
     transform: rotate(360deg);
   }
 }
-@media (max-width: 700px) {
-  #about .about-photo {
-    width: min(70vw, 280px);
-  }
-}
+
 
 @media (prefers-reduced-motion: reduce) {
   #about .about-photo::before,
@@ -504,6 +556,48 @@ section {
   100% { opacity: 1; transform: translateY(0); }
 }
 
+/* --- MOBILE ABOUT SECTION FIXING --- */
+@media (max-width: 768px) {
+  #about .about-layout {
+    /* Creates a new mobile layout: a large column for the heading, and a 110px column for the photo */
+    grid-template-columns: 1fr 110px; 
+    gap: 16px 20px; 
+    align-items: center; 
+  }
+  
+  /* This breaks the heading and text out of their wrapper just for mobile layout */
+  #about .my-info {
+    display: contents; 
+  }
+  
+  /* Locks the heading into the top-left spot */
+  #about .my-info h1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    font-size: 2.8rem; /* Slightly scaled down so it doesn't collide with the photo */
+    margin: 0; 
+  }
+  
+  /* Locks the photo into the top-right spot and shrinks it */
+  #about .about-photo {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    width: 110px; /* Small enough to fit beside the heading */
+  }
+  
+  /* Forces the paragraph text to drop down to the second row and stretch across both columns */
+  #about .my-info p {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    margin-top: 10px;
+  }
+  
+  /* Shrinks the orbital rings so they don't overlap your text on small screens */
+  #about .about-photo::before,
+  #about .about-photo::after {
+    inset: -12px; 
+  }
+}
 #hey .intro-text {
   font-size: 1.5rem; /* Increased font size */
   font-style: italic; /* Matches the reference design */
@@ -547,7 +641,7 @@ section {
   animation: letterBounce 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
   animation-delay: calc(var(--i) * 0.08s + 0.15s);
 }
-/* The actual bounce keyframes */
+
 @keyframes letterBounce {
   0% {
     opacity: 0;
@@ -618,7 +712,7 @@ section {
 }
 
 /* --- NAV BAR TRANSITION --- */
-/* Add this specific class to smoothly hide the nav bar */
+
 nav.nav-hidden {
     transform: translateY(-100%);
 }
@@ -629,4 +723,195 @@ nav.nav-hidden {
     font-style: italic;
     color: var(--dark-cream); /* Uses your darker cream for a premium look */
     margin: -25px 0 35px 0; /* Pulls it up closer to the heading, pushes icons down */
+}
+
+/* --- ACTIVITIES CAROUSEL --- */
+#activities {
+  padding: 60px 8% 80px 8%; 
+  scroll-margin-top: 74px;
+  overflow: hidden; 
+}
+
+#activities h1 {
+  font-family: 'Playfair Display', serif; 
+  font-size: 2.5rem; 
+  margin: 0 0 35px 0;
+  line-height: 1;
+  text-align: center;
+}
+
+.carousel-container {
+  position: relative;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.activity-card {
+  position: absolute;
+  width: min(70vw, 320px); 
+  height: 190px; 
+  background: var(--maroon);
+  color: var(--cream);
+  border-radius: 16px;
+  padding: 20px 24px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
+  z-index: 1;
+  transform: scale(0.8) translateX(0);
+  cursor: pointer;
+}
+
+
+.activity-card.active {
+  opacity: 1;
+  z-index: 3;
+  transform: scale(1.1) translateX(0);
+  box-shadow: 0 18px 40px rgba(62, 20, 20, 0.25);
+  cursor: default;
+}
+
+
+.activity-card.prev {
+  opacity: 0.6;
+  z-index: 2;
+  transform: scale(0.9) translateX(-65%);
+}
+
+
+.activity-card.next {
+  opacity: 0.6;
+  z-index: 2;
+  transform: scale(0.9) translateX(65%);
+}
+
+.activity-card:hover:not(.active) {
+  opacity: 0.9;
+}
+
+
+.activity-tag {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(251, 240, 196, 0.7);
+  margin-bottom: 8px;
+}
+
+.card-content h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.25rem;
+}
+
+.card-content p {
+  margin: 0 0 16px 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.card-content a {
+  color: var(--dark-cream);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+
+
+/* Default: Hide the hamburger menu on desktop */
+.menu-btn {
+    display: none;
+    background: transparent;
+    border: 1.5px solid var(--cream); /* Creates the rounded box */
+    color: var(--cream);
+    border-radius: 8px; 
+    padding: 6px 12px;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block; /* Show hamburger */
+    }
+
+    
+    .nav-links {
+        position: absolute;
+        top: 100%; /* Drops it right below the red nav bar */
+        left: 0;
+        width: 100%;
+        background: var(--maroon);
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 0;
+        height: 0;
+        overflow: hidden;
+        transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+        box-shadow: 0 10px 16px rgba(62, 20, 20, 0.3);
+    }
+
+    
+    .nav-links.menu-open {
+        height: 340px; /* Increased to fit the Activities link */
+        padding: 30px 0;
+    }
+
+   
+    .social-links {
+        gap: 16px; 
+    }
+    
+    .social-links a {
+        font-size: 1.2rem; 
+    }
+    
+  #activities .carousel-container {
+    height: 220px; 
+  }
+
+  #activities .activity-card {
+    width: 60vw; /* Narrow enough to let the side cards show */
+    height: 180px;
+    padding: 16px 20px; 
+  }
+
+  
+  #activities .card-content h3 { 
+    font-size: 1.1rem; 
+    margin-bottom: 6px;
+  }
+  
+  #activities .card-content p { 
+    font-size: 0.85rem; 
+    margin-bottom: 12px; 
+    line-height: 1.3; 
+  }
+
+ 
+  #activities .activity-card.active {
+    transform: scale(1.1) translateX(0);
+  }
+
+  #activities .activity-card.prev {
+    opacity: 0.5;
+    pointer-events: auto;
+    transform: scale(0.85) translateX(-70%); /* Pulls it closer to the center card */
+  }
+
+  #activities .activity-card.next {
+    opacity: 0.5;
+    pointer-events: auto;
+    transform: scale(0.85) translateX(70%); /* Pulls it closer to the center card */
+  }
 }
