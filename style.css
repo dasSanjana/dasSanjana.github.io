@@ -17,9 +17,9 @@ body {
     margin: 0;
     background: var(--cream);
     color: var(--ink);
-    font-family: 'EB Garamond', serif; 
-    font-size: 1.15rem; 
-    line-height: 1.8; 
+    font-family: 'EB Garamond', serif; /* Applies the new classic font */
+    font-size: 1.15rem; /* Makes it slightly larger and easier to read */
+    line-height: 1.8; /* Gives the text that airy, spaced-out look */
 }
 
 
@@ -29,7 +29,7 @@ nav {
     background-color: var(--maroon);
     z-index: 10;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between; /* This pushes the two div groups to opposite sides */
     align-items: center;
     padding: 18px 5%; 
     box-shadow: 0 4px 16px rgba(62, 20, 20, 0.3);
@@ -46,33 +46,36 @@ nav {
 }
 .nav-links a.active {
     text-decoration: underline;
-    text-underline-offset: 6px; 
+    text-underline-offset: 6px; /* Pushes the underline down slightly so it looks premium */
     text-decoration-thickness: 2px;
-    color:var(--dark-cream);
+    color:var(--dark-cream); /* Brightens the active link slightly */
 }
 .nav-links a:hover {
     text-decoration: underline;
 }
 
-
+/* This controls the icon group */
 .social-links {
     display: flex;
-    gap: 24px; 
+    gap: 24px; /* This creates the decent amount of space between your icons */
     align-items: center;
 }
 
 .social-links a {
     color: var(--cream);
-    font-size: 1.4rem; 
+    font-size: 1.4rem; /* Makes the icons a good size */
     text-decoration: none;
 }
 
 .social-links a:hover {
     color: #fff;
-    transform: translateY(-2px); 
+    transform: translateY(-2px); /* Slight bounce effect on hover */
 }
 section {
+  /* Increase the top padding (110px) to give your titles plenty of breathing room below the nav */
   padding: 110px 8% 80px 8%; 
+  
+  /* CRITICAL: Set this to match your nav bar's exact height so it doesn't expose the previous section */
   scroll-margin-top: 74px; 
 }
 
@@ -83,7 +86,7 @@ section {
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 16px; 
+    gap: 16px; /* This dictates the exact, even space between every element */
 }
 
 #hey h1{
@@ -197,37 +200,40 @@ section {
 .project-back {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; 
-    gap: 16px; 
+    justify-content: flex-start; /* Keeps content flowing naturally from the top */
+    gap: 16px; /* Adds consistent breathing room between elements */
     
+    /* Makes the content scrollable if it exceeds the card height */
     overflow-y: auto; 
+    
+    /* Hides the scrollbar for a seamless editorial look */
     scrollbar-width: none; 
     -ms-overflow-style: none; 
 }
 
-
+/* Hides the scrollbar in Chrome, Safari, and Edge */
 .project-front::-webkit-scrollbar,
 .project-back::-webkit-scrollbar {
     display: none; 
 }
 
 /* --- INLINE LINK STYLING --- */
-
+/* Styles the "(Link)" text you added next to the headings */
 .project-front a,
 .project-back a {
-    color: var(--dark-cream); 
+    color: var(--dark-cream); /* Replaces the default blue with your premium cream */
     text-decoration: underline;
-    text-underline-offset: 4px; 
+    text-underline-offset: 4px; /* Drops the underline slightly for a cleaner look */
     font-weight: normal;
     transition: opacity 0.3s ease;
 }
 
 .project-front a:hover,
 .project-back a:hover {
-    opacity: 0.7;
+    opacity: 0.7; /* Gentle fade effect when hovered */
 }
 
-
+/* --- BULLETED LIST SPACING (For the back of the cards) --- */
 .project-back ul {
     margin: 0;
     padding-left: 20px;
@@ -238,20 +244,21 @@ section {
     line-height: 1.5;
 }
 
-
+/* --- ULTIMATE CARD SPACING OVERRIDE --- */
 .project-card--flip .project-face,
 .project-front,
 .project-back {
     justify-content: flex-start !important;
 }
 
-
+/* This kills any lingering auto-margins that might be shoving the list to the bottom */
 .project-front > :last-child,
 .project-back > :last-child,
 .project-back ul {
     margin-top: 0 !important; 
 }
 
+/* Removes default browser margins inside the cards so only your 16px gap applies */
 .project-front h3,
 .project-front p,
 .project-back h3,
@@ -259,7 +266,7 @@ section {
     margin: 0;
 }
 
-
+/* Tightens the spacing between lines for long card titles */
 .project-front h3,
 .project-back h3 {
     line-height: 1.3; 
@@ -306,9 +313,9 @@ section {
 }
 
 #experience .experience-header {
-    flex-direction: column; 
-    align-items: flex-start;
-    gap: 12px; 
+    flex-direction: column; /* Stacks the heading and tagline vertically */
+    align-items: flex-start; /* Aligns both lines to the left */
+    gap: 12px; /* Adds breathing room between the two text blocks */
   }
 
 .company-meta {
@@ -321,8 +328,8 @@ section {
 }
 
 #experience .experience-header h1 {
-  font-family: 'Playfair Display', serif; 
-  font-size: 3.5rem; 
+  font-family: 'Playfair Display', serif; /* Matches the "About Me" font style */
+  font-size: 3.5rem; /* Matches the size of your "About Me" heading */
   margin: 0;
   line-height: 1;
 }
@@ -347,12 +354,19 @@ section {
 }
 
 .education-card {
+  /* REDUCED: Removed the huge 248px minimum height. 
+     A smaller minimum keeps them looking like cards without being unnecessarily giant. */
   min-height: 160px; 
+  
+  /* REDUCED: Tighter padding so the content doesn't look lost inside a huge box */
   padding: 24px 28px; 
+  
   background: var(--cream);
   border: 1px solid rgba(122, 31, 31, 0.2);
   border-radius: 20px;
   box-shadow: 0 18px 40px rgba(74, 20, 20, 0.12);
+  
+  /* NEW: Pushes the text closer together inside the card */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -361,7 +375,7 @@ section {
 
 .education-year {
   display: block;
-  margin-bottom: 8px; 
+  margin-bottom: 8px; /* REDUCED from 24px to tighten up the spacing */
   color: var(--maroon);
   font-weight: bold;
 }
@@ -377,7 +391,7 @@ section {
 #education h2 {
   font-family: 'Playfair Display', serif; 
   font-size: 3.5rem; 
-  margin: 0 0 40px 0; 
+  margin: 0 0 40px 0; /* Gives a nice breathing room before the cards start */
   line-height: 1;
 }
 .education-extras {
@@ -390,16 +404,18 @@ section {
 .education-extra {
   padding-left: 20px;
   border-left: 3px solid var(--maroon);
+  
+  /* NEW: Turns the block into a vertical stack and controls the exact spacing */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; 
-  gap: 8px; 
+  justify-content: flex-start; /* Stops the text from stretching vertically */
+  gap: 8px; /* Tightly packs the eyebrow, title, and description together */
 }
 
 .education-extra p, 
 .education-extra h3 {
   margin: 0 !important; 
-  line-height: 1.4; 
+  line-height: 1.4; /* Makes the individual lines slightly tighter than the global body text */
 }
 
 .education-extra .eyebrow {
@@ -413,11 +429,12 @@ section {
 .reveal {
   opacity: 0;
   transform: translateY(40px);
+  /* Uses the premium smooth curve from your hero section */
   transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   transition-delay: var(--delay, 0ms);
 }
 
-
+/* The ending state (visible and in place) */
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
@@ -445,7 +462,7 @@ section {
   width: 100%;
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(240px, 0.8fr);
-  align-items: start; 
+  align-items: start; /* CRITICAL FIX: Aligns the text to the top instead of pushing it down */
   gap: clamp(32px, 6vw, 80px);
 }
 
@@ -515,8 +532,8 @@ section {
   font-size: 2.2rem;
   display: inline-block;
   position: relative;
-  font-weight: normal; 
-  transform: translateY(-8px); 
+  font-weight: normal; /* Prevents the star from looking too bold/distorted */
+  transform: translateY(-8px); /* Lifts the stars slightly above the text */
 }
 
 /* Styles the secondary, smaller star */
@@ -556,7 +573,7 @@ section {
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* --- MOBILE ABOUT SECTION FIXING --- */
+/* --- MOBILE ABOUT SECTION FIX --- */
 @media (max-width: 768px) {
   #about .about-layout {
     /* Creates a new mobile layout: a large column for the heading, and a 110px column for the photo */
@@ -641,7 +658,7 @@ section {
   animation: letterBounce 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
   animation-delay: calc(var(--i) * 0.08s + 0.15s);
 }
-
+/* The actual bounce keyframes */
 @keyframes letterBounce {
   0% {
     opacity: 0;
@@ -712,7 +729,7 @@ section {
 }
 
 /* --- NAV BAR TRANSITION --- */
-
+/* Add this specific class to smoothly hide the nav bar */
 nav.nav-hidden {
     transform: translateY(-100%);
 }
@@ -727,6 +744,7 @@ nav.nav-hidden {
 
 /* --- ACTIVITIES CAROUSEL --- */
 #activities {
+  /* REDUCED: Much smaller top and bottom padding so it takes up less screen height */
   padding: 60px 8% 80px 8%; 
   scroll-margin-top: 74px;
   overflow: hidden; 
@@ -734,6 +752,7 @@ nav.nav-hidden {
 
 #activities h1 {
   font-family: 'Playfair Display', serif; 
+  /* REDUCED: Scaled down from 3.5rem to 2.5rem so it feels like a secondary section */
   font-size: 2.5rem; 
   margin: 0 0 35px 0;
   line-height: 1;
@@ -751,11 +770,13 @@ nav.nav-hidden {
 
 .activity-card {
   position: absolute;
+  /* REDUCED: Narrower and shorter cards */
   width: min(70vw, 320px); 
   height: 190px; 
   background: var(--maroon);
   color: var(--cream);
   border-radius: 16px;
+  /* REDUCED: Tighter inner spacing */
   padding: 20px 24px; 
   display: flex;
   flex-direction: column;
@@ -767,7 +788,7 @@ nav.nav-hidden {
   cursor: pointer;
 }
 
-
+/* The Center Card */
 .activity-card.active {
   opacity: 1;
   z-index: 3;
@@ -776,14 +797,14 @@ nav.nav-hidden {
   cursor: default;
 }
 
-
+/* The Left Card */
 .activity-card.prev {
   opacity: 0.6;
   z-index: 2;
   transform: scale(0.9) translateX(-65%);
 }
 
-
+/* The Right Card */
 .activity-card.next {
   opacity: 0.6;
   z-index: 2;
@@ -794,7 +815,7 @@ nav.nav-hidden {
   opacity: 0.9;
 }
 
-
+/* REDUCED: Scaled down the text inside the cards so it fits perfectly */
 .activity-tag {
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -822,7 +843,7 @@ nav.nav-hidden {
   margin-top: auto;
 }
 
-
+/* --- MOBILE NAVIGATION --- */
 
 /* Default: Hide the hamburger menu on desktop */
 .menu-btn {
@@ -844,7 +865,7 @@ nav.nav-hidden {
         display: block; /* Show hamburger */
     }
 
-    
+    /* Transform the links into a dropdown menu */
     .nav-links {
         position: absolute;
         top: 100%; /* Drops it right below the red nav bar */
@@ -861,13 +882,13 @@ nav.nav-hidden {
         box-shadow: 0 10px 16px rgba(62, 20, 20, 0.3);
     }
 
-    
+    /* When the Javascript adds the 'menu-open' class, the menu slides down */
     .nav-links.menu-open {
         height: 340px; /* Increased to fit the Activities link */
         padding: 30px 0;
     }
 
-   
+    /* Make the social icons more compact on mobile */
     .social-links {
         gap: 16px; 
     }
@@ -875,7 +896,7 @@ nav.nav-hidden {
     .social-links a {
         font-size: 1.2rem; 
     }
-    
+    /* --- MOBILE CAROUSEL FIX (3D EFFECT) --- */
   #activities .carousel-container {
     height: 220px; 
   }
@@ -886,7 +907,7 @@ nav.nav-hidden {
     padding: 16px 20px; 
   }
 
-  
+  /* Shrink the text slightly so it still fits inside the mini mobile cards */
   #activities .card-content h3 { 
     font-size: 1.1rem; 
     margin-bottom: 6px;
@@ -898,7 +919,7 @@ nav.nav-hidden {
     line-height: 1.3; 
   }
 
- 
+  /* Re-enable and scale the side cards for the mobile 3D effect */
   #activities .activity-card.active {
     transform: scale(1.1) translateX(0);
   }
