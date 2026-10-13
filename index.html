@@ -13,6 +13,9 @@
 
     <body>
         <nav>
+          <button class="menu-btn" aria-label="Toggle Menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
     <!-- Left side: THESE MUST BE WRAPPED IN THIS DIV -->
     <div class="nav-links">
         <a href="#hey">hey</a>
@@ -20,6 +23,7 @@
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#education">Education</a>
+        <a href="#activities">Activities</a>
     </div>
 
     <!-- Right side: Icons -->
@@ -103,20 +107,23 @@
         <article class="project-card project-card--flip reveal" style="--delay: 100ms">
   <div class="project-inner">
     <div class="project-face project-front">
-      <p class="project-kind">PROJ-1 · Research</p>
-      <h3>Speech Enhancement Across Transform Domains</h3>
+      <p class="project-kind">Project-1 · Research</p>
+      <h3>Speech Enhancement in Cross-Transform Domains Using a Dual-Phase Attention
+Framework
+(<a href="https://ieeexplore.ieee.org/document/11380802">Link</a>)</h3>
+      <p>Accepted at IEEE Conference</p>
       <p>Click to read more ↗</p>
     </div>
 
     <div class="project-face project-back">
-      <p class="project-kind">IEEE-accepted research</p>
-      <h3>Dual-Phase Attention Framework</h3>
-      <p>
-        A speech-enhancement model using STFT and STDCT to model
-        magnitude and phase, with attention-based feature extraction.
-      </p>
-      <p>Click to return.</p>
-    </div>
+  <h4>Python</h4>
+  <ul>
+    <li>Developed a dual-phase SE model using STFT and STDCT for efficient magnitude and phase modeling</li>
+    <li>Implemented real-time inference with attention-based feature extraction (MSFE, CSAtt)</li>
+    <li>Reduced computational cost while improving speech quality using DNNs.</li>
+  </ul>
+  <p>Click to return.</p>
+</div>
   </div>
 </article>
             <article class="project-card project-card--flip reveal" style="--delay: 200ms">
@@ -125,15 +132,18 @@
             <p class="project-kind">Project-2 · Internship</p>
             <h3>Textbook RAG Engine</h3>
             <p>A FastAPI system that finds textbook answers by board, subject, class, and question.</p>
+            <p>Click to read more ↗</p>
             </div>
             <div class = 'project-face project-back'>
-                <p class="project-kind">IEEE-accepted research</p>
-      <h3>Dual-Phase Attention Framework</h3>
-      <p>
-        A speech-enhancement model using STFT and STDCT to model
-        magnitude and phase, with attention-based feature extraction.
-      </p>
-      <p>Move the pointer away to return.</p>
+      <h4>FastAPI, Python, Qdrant, Ollama (LLaVA), OpenCV, SentenceTransformers, pdfplumber</h4>
+      <ul>
+  <li><strong>Automated Multimodal Ingestion:</strong> Built a custom PDF parsing pipeline using pdfplumber and OpenCV to dynamically detect, crop, clean, and extract complex figure regions and diagrams from raw textbooks.</li>
+  <li><strong>AI Image Captioning:</strong> Integrated Ollama's LLaVA vision model to automatically generate descriptive captions for all extracted diagrams, making visual content fully searchable alongside the text.</li>
+  <li><strong>Metadata-Rich Vector Search:</strong> Embedded text and image captions using SentenceTransformers and upserted them into a Qdrant vector database, implementing strict metadata filtering capabilities (by board, class, subject, and academic year).</li>
+  <li><strong>Custom Semantic Scoring Algorithm:</strong> Engineered a retrieval ranking system that accurately pairs retrieved text chunks with the most relevant diagrams using a weighted combination of cosine similarity, keyword matching, and page-proximity bonuses.</li>
+  <li><strong>High-Performance REST API:</strong> Exposed the complete ingestion and retrieval pipelines via FastAPI endpoints, delivering strict, context-grounded LLM responses directly mapped to source files, page numbers, and image URLs.</li>
+</ul>
+      <p>Click to return.</p>
             </div>
             </div>
             </article>
@@ -145,15 +155,17 @@
             <p class="project-kind">Project-3 · Computer Vision</p>
             <h3>Newspaper Layout Detection</h3>
             <p>A YOLOv10 pipeline for detecting elements in dense Indian newspaper pages.</p>
+            <p>Click to read more ↗</p>
             </div>
             <div class = 'project-face project-back'>
-                <p class="project-kind">IEEE-accepted research</p>
-      <h3>Dual-Phase Attention Framework</h3>
-      <p>
-        A speech-enhancement model using STFT and STDCT to model
-        magnitude and phase, with attention-based feature extraction.
-      </p>
-      <p>Move the pointer away to return.</p>
+      <h4>Python, YOLOv10, Computer Vision (OpenCV), Web Automation, Data Engineering</h4>
+        <ul>
+  <li><strong>Large-Scale Web Automation:</strong> Engineered automated scripts to continuously scrape and download regional e-papers across multiple independent web sources, creating a steady data ingestion pipeline.</li>
+  <li><strong>Custom Data Pre-Processing:</strong> Designed and implemented a custom pre-processing pipeline utilizing Logical Entity Grouping techniques. This crucial step organized messy, unstructured e-paper data into logical blocks before feeding it to the model, drastically improving detection accuracy.</li>
+  <li><strong>YOLOv10 Fine-Tuning:</strong> Annotated 100 newspaper pages,trained and adapted a YOLOv10 layout detection model specifically for the unique architectural complexities of Indian newspapers, overcoming the limitations of standard Western-trained document models.</li>
+  <li><strong>Advanced Post-Processing:</strong> Developed specialized post-processing logic to refine the model's bounding box outputs, ensuring highly accurate extraction of distinct newspaper elements like headlines, columns, images, and captions.</li>
+</ul>
+      <p>Click to return.</p>
             </div>
             </div>
             </article>
@@ -196,6 +208,52 @@
       <h3>Event Manager, Technical Club WIOS</h3>
       <p>Organized and managed technology events.</p>
     </article>
+  </div>
+</section>
+<section id="activities">
+  <h1 class="reveal" style="--delay: 0ms">Recent Activities</h1>
+  
+  <div class="carousel-container reveal" style="--delay: 150ms">
+   
+    <div class="activity-card active" onclick="moveToCard(this)">
+      <div class="card-content">
+        <span class="activity-tag">Medium</span>
+        <h3>What I Did at Nine</h3>
+        <p>To know what you are meant to do, look at what you did at nine.</p>
+        <a href="https://medium.com/@dassanjana1900/what-i-did-at-nine-a5fb6e8def65">Read Post ↗</a>
+      </div>
+    </div>
+    
+ 
+    <div class="activity-card active" onclick="moveToCard(this)">
+      <div class="card-content">
+        <span class="activity-tag">Medium</span>
+        <h3>I posted my first video on youtube</h3>
+        <p>I opened a youtube channel and this is what i expect myself to do</p>
+        <a href="https://medium.com/@dassanjana1900/i-posted-my-first-video-on-youtube-b4416aced08f">Read Post ↗</a>
+      </div>
+    </div>
+    
+    
+   
+    <div class="activity-card" onclick="moveToCard(this)">
+      <div class="card-content">
+        <span class="activity-tag">Youtube</span>
+        <h3>Posts Coming soon</h3>
+        <p></p>
+        <a href="https://www.youtube.com/@Sawnjawna19">View Channel ↗</a>
+      </div>
+    </div>
+    
+    
+    <div class="activity-card prev" onclick="moveToCard(this)">
+      <div class="card-content">
+        <span class="activity-tag">GitHub</span>
+        <h3>YOLOv10 Layout Detection</h3>
+        <p>Open-sourcing my pipeline for detecting elements in dense Indian newspaper pages.</p>
+        <a href="#">View Repo ↗</a>
+      </div>
+    </div>
   </div>
 </section>
     </body>
@@ -292,5 +350,70 @@
   if (footer) {
     footerObserver.observe(footer);
   }
+
+  // --- CAROUSEL LOGIC ---
+  const cards = Array.from(document.querySelectorAll('.activity-card'));
+  let currentIndex = 0;
+  let autoplayTimer;
+
+  function updateCarousel() {
+    // Remove all state classes
+    cards.forEach(card => {
+      card.classList.remove('active', 'prev', 'next');
+    });
+
+    // Calculate the indices for previous and next cards
+    const prevIndex = (currentIndex === 0) ? cards.length - 1 : currentIndex - 1;
+    const nextIndex = (currentIndex === cards.length - 1) ? 0 : currentIndex + 1;
+
+    // Apply the classes to trigger the CSS transitions
+    cards[currentIndex].classList.add('active');
+    cards[prevIndex].classList.add('prev');
+    cards[nextIndex].classList.add('next');
+  }
+
+  // Moves the carousel to the next card
+  function nextSlide() {
+    currentIndex = (currentIndex === cards.length - 1) ? 0 : currentIndex + 1;
+    updateCarousel();
+  }
+
+  // Allows clicking side cards to bring them to the center
+  function moveToCard(clickedCard) {
+    if (clickedCard.classList.contains('active')) return;
+    
+    currentIndex = cards.indexOf(clickedCard);
+    updateCarousel();
+    
+    // Reset the auto-play timer so it doesn't skip immediately after you click
+    resetAutoplay();
+  }
+
+  function resetAutoplay() {
+    clearInterval(autoplayTimer);
+    autoplayTimer = setInterval(nextSlide, 4000); // Changes every 4 seconds
+  }
+
+  // Initialize
+  updateCarousel();
+  resetAutoplay();
+
+
+  //  MOBILE MENU TOGGLE 
+  const menuBtn = document.querySelector('.menu-btn');
+  const navLinksContainer = document.querySelector('.nav-links');
+  const mobileLinks = document.querySelectorAll('.nav-links a');
+
+  // Toggle the menu when clicking the hamburger button
+  menuBtn.addEventListener('click', () => {
+      navLinksContainer.classList.toggle('menu-open');
+  });
+
+  // to automatically close the menu when you click any link
+  mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+          navLinksContainer.classList.remove('menu-open');
+      });
+  });
 </script>
 </html>
