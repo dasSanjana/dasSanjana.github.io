@@ -52,28 +52,44 @@
         </section>
 
         <section id="about">
-         
   <div class="about-layout">
+    
+    <!-- ITEM 1: THE TEXT AND TECH STACK -->
     <div class="my-info reveal" style="--delay: 0ms">
       <h1>About Me
         <span class="stars">✦<span class="small-star">✦</span></span>
       </h1>
       <p>
-        I'm an AI/ML developer and a final-year engineering student at
-        Vellore Institute of Technology, where I build Retrieval-Augmented
+        I'm an AI/ML developer, graduated from Vellore Institute of Technology, where I build Retrieval-Augmented
         Generation (RAG) systems and computer vision pipelines that hold up
         on real, messy, real-world documents—not just clean demo data.
         Most recently, I worked as an LLM Engineer Intern at a startup, and
         a research paper of mine on speech enhancement was accepted at an
         IEEE conference.
       </p>
-    </div>
 
+      <!-- The tech stack goes here, BEFORE the closing div -->
+      <div class="tech-stack">
+        <h3>Core Stack</h3>
+        <div class="tech-tags">
+          <span>Python</span>
+          <span>PyTorch</span>
+          <span>FastAPI</span>
+          <span>Qdrant</span>
+          <span>YOLOv10</span>
+          <span>OpenCV</span>
+          <span>PostgreSQL</span>
+          <span>Docker</span>
+        </div>
+      </div>
+    </div> <!-- THIS is the closing div for .my-info -->
+
+    <!-- ITEM 2: THE PHOTO -->
     <div class="about-photo reveal" style="--delay: 150ms">
       <img src="sanjana.jpeg" alt="Portrait of Sanjana">
     </div>
+
   </div>
-  
 </section>
 
         <section id = "experience">
@@ -199,7 +215,9 @@ Framework
   <div class="education-extras">
     <article class="education-extra reveal" style="--delay: 70ms">
       <p class="eyebrow">Certification</p>
-      <h3>IBM Generative AI Practitioner</h3>
+      <h3>IBM Generative AI Practitioner
+        <a href="https://courses.vit.skillsnetwork.site/certificates/ae02a64d48394ba08c395de982028117">(Link)</a>
+      </h3>
       <p>Foundations in generative AI, prompt engineering, and RAG.</p>
     </article>
 
@@ -245,6 +263,14 @@ Framework
       </div>
     </div>
     
+    
+    <div class="activity-card prev" onclick="moveToCard(this)">
+      <div class="card-content">
+        <span class="activity-tag">GitHub</span>
+        <h3>YOLOv10 Layout Detection</h3>
+        <p>Open-sourcing my pipeline for detecting elements in dense Indian newspaper pages.</p>
+        <a href="#">View Repo ↗</a>
+      </div>
     </div>
   </div>
 </section>
